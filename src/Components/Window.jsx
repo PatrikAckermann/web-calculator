@@ -25,7 +25,7 @@ export default function Window(props) {
             <p>{props.name}</p>
             <div className="Window-Header-Buttons">
                 <button className="Window-Header-Buttons-Minimize">-</button>
-                <button className="Window-Header-Buttons-Close">X</button>
+                <button className="Window-Header-Buttons-Close" onClick={() => props.deleteWindow(props.id)}>X</button>
             </div>
         </div>
     </div></Draggable>

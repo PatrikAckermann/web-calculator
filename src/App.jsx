@@ -11,12 +11,23 @@ function App() {
         setId(id => id += 1)
         return [...x, {id: id, type: type, x: 100, y: 100, layer: 100000000, name: "Calculator"}]
     })}
+    function deleteWindow(id) {
+        setWindows(x => {
+            var newWindows = []
+            x.forEach(y => {
+                if (y.id !== id) {
+                    newWindows.push(y)
+                }
+            })
+            return newWindows
+        })
+    }
 
     console.log("APP RELOAD", windows)
 
     return <div className="App">
-        <Sidebar windows={windows} setWindows={setWindows} addWindow={addWindow}/>
-        <WindowArea windows={windows} setWindows={setWindows}/>
+        <Sidebar windows={windows} setWindows={setWindows} addWindow={addWindow} deleteWindow={deleteWindow}/>
+        <WindowArea windows={windows} setWindows={setWindows} deleteWindow={deleteWindow}/>
     </div>
 }
 

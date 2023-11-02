@@ -26,7 +26,7 @@ export default function WindowArea(props) {
 
     var elements = props.windows.map(x => {
         console.log(x)
-        return <Window onclick={onclick} style={{x: x.x, y: x.y, zIndex: x.layer}} x={x.x} y={x.y} setWindows={props.setWindows} id={x.id} name={x.name}/>
+        return <Window onclick={onclick} style={{x: x.x, y: x.y, zIndex: x.layer}} x={x.x} y={x.y} setWindows={props.setWindows} id={x.id} name={x.name} deleteWindow={props.deleteWindow}/>
     })
 
     return <div className="WindowArea">
