@@ -18,9 +18,11 @@ export default function Window(props) {
         })
     }
 
-    return <Draggable bounds="parent" position={{x: props.x, y: props.y}} onStop={onStop} handle=".Window-Header" cancel=".Window-Header-Buttons"><div className="Window" style={props.style}>
+    console.log("RELOADING WINDOW")
+
+    return <Draggable bounds="parent" position={{x: props.x, y: props.y}} onStop={onStop} onStart={() => props.onclick(props.id)} handle=".Window-Header" cancel=".Window-Header-Buttons"><div className="Window" style={props.style} onClick={() => props.onclick(props.id)}>
         <div className="Window-Header">
-            <p>Calculator</p>
+            <p>{props.name}</p>
             <div className="Window-Header-Buttons">
                 <button className="Window-Header-Buttons-Minimize">-</button>
                 <button className="Window-Header-Buttons-Close">X</button>

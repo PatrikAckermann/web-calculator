@@ -9,6 +9,7 @@
     height: 400px;
     width: 300px;
     position: absolute;
+    border: 1px solid #555555;
 }
 
 .Window-Header {

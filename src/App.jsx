@@ -9,8 +9,10 @@ function App() {
     var [windows, setWindows] = React.useState([])
     function addWindow(type) {setWindows(x => {
         setId(id => id += 1)
-        return [...x, {id: id, type: type, x: 100, y: 100}]
+        return [...x, {id: id, type: type, x: 100, y: 100, layer: 100000000, name: "Calculator"}]
     })}
+
+    console.log("APP RELOAD", windows)
 
     return <div className="App">
         <Sidebar windows={windows} setWindows={setWindows} addWindow={addWindow}/>
