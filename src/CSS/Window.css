@@ -1,0 +1,46 @@
+.Window {
+    background-color: #333333;
+    color: white;
+    border-radius: 20px;
+    resize: both;
+    overflow: auto;
+    min-width: 250px;
+    min-height: 40px;
+}
+
+.Window-Header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 40px;
+    background-color: #555555;
+    color: white;
+    border-radius: 20px;
+    align-items: center;
+    padding-left: 15px;
+    user-select: none;
+}
+
+.Window-Header-Buttons {
+    border-radius: 20px;
+    background-color: #ffffff;
+}
+
+.Window-Header-Buttons > button {
+    border: none;
+    border-radius: 20px;
+    height: 40px;
+    width: 40px;
+    font-weight: bold;
+}
+
+.Window-Header-Buttons-Minimize {
+    color: black;
+    background-color: transparent;
+    
+}
+
+.Window-Header-Buttons-Close {
+    background-color: #ff4040;
+    color: white;
+}

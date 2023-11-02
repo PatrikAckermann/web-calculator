@@ -5,9 +5,12 @@ import Sidebar from "./Components/Sidebar"
 import WindowArea from "./Components/WindowArea"
 
 function App() {
-    return <div>
-        <Sidebar/>
-        <WindowArea/>
+    var [id, setId] = React.useState(0)
+    var [windows, setWindows] = React.useState([{id: 0, type:"normal", x: 200, y:200, width: 200, height: 200}])
+
+    return <div className="App">
+        <Sidebar windows={windows} setWindows={setWindows}/>
+        <WindowArea windows={windows} setWindows={setWindows}/>
     </div>
 }
 

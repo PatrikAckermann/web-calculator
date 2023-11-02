@@ -1,0 +1,4 @@
+.WindowArea {
+    position: relative;
+    width: calc(100vw - 300px);
+}
