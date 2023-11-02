@@ -6,10 +6,14 @@ import WindowArea from "./Components/WindowArea"
 
 function App() {
     var [id, setId] = React.useState(0)
-    var [windows, setWindows] = React.useState([{id: 0, type:"normal", x: 200, y:200, width: 200, height: 200}])
+    var [windows, setWindows] = React.useState([])
+    function addWindow(type) {setWindows(x => {
+        setId(id => id += 1)
+        return [...x, {id: id, type: type, x: 100, y: 100}]
+    })}
 
     return <div className="App">
-        <Sidebar windows={windows} setWindows={setWindows}/>
+        <Sidebar windows={windows} setWindows={setWindows} addWindow={addWindow}/>
         <WindowArea windows={windows} setWindows={setWindows}/>
     </div>
 }
