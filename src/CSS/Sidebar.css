@@ -1,7 +1,7 @@
 .Sidebar {
     width: 300px;
     height: calc(100vh - 20px);
-    padding: 10px 0;
+    padding: 10px 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -10,17 +10,49 @@
 }
 
 .Sidebar-Button {
-    width: 80%;
+    width: calc(100% - 30px);
     height: 40px;
-    padding: 5px;
-    margin: 10px 10%;
+    padding: 0 15px;
+    margin: 10px 0;
     border-radius: 20px;
     border: none;
     user-select: none;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.Sidebar-Button > *, .Sidebar-Button {
+    transition: 0.2s ease-in-out;
+}
+
+.Sidebar-Button-Text {
+    margin: auto 0;
+    transform: translateX(100%);
+}
+
+.Sidebar-Button-Close {
+    opacity: 0%;
+    background-color: #ff4040;
+    color: white;
+    border-radius: 10px;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    margin: auto 0;
 }
 
 .Sidebar-Button:hover {
     background-color: #dedede;
+}
+
+.Sidebar-Button:hover .Sidebar-Button-Close {
+    opacity: 100%;
+}
+
+.Sidebar-Button:hover .Sidebar-Button-Text {
+    transform: translateX(0);
 }
 
 .Sidebar-Button:active {

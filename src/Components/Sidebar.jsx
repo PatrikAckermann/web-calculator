@@ -6,9 +6,13 @@ export default function Sidebar(props) {
         props.addWindow(e.target.value)
     } 
 
+    var windows = props.windows.map(x => {
+        return <div className="Sidebar-Button" onClick={() => props.moveToTop(x.id)}><p className="Sidebar-Button-Text">{x.name}</p><p className="Sidebar-Button-Close" onClick={() => props.deleteWindow(x.id)}>x</p></div>
+    })
+
     return <div className="Sidebar">
         <div className="Sidebar-Windowlist">
-
+            {windows}
         </div>
         <select className="Sidebar-Button" value="0" onChange={onSelect}>
             <option hidden value="0">Add Window</option>
@@ -16,5 +20,11 @@ export default function Sidebar(props) {
             <option value="unit">Unit Converter</option>
             <option value="currency">Currency Converter</option>
         </select>
+    </div>
+}
+
+function windowButton(props) {
+    return <div>
+
     </div>
 }
