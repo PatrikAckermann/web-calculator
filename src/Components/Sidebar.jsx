@@ -6,8 +6,13 @@ export default function Sidebar(props) {
         props.addWindow(e.target.value)
     } 
 
+    function onClick(id) {
+        props.moveToTop(id)
+        props.showWindow(id)
+    }
+
     var windows = props.windows.map(x => {
-        return <div className="Sidebar-Button" onClick={() => props.moveToTop(x.id)}><p className="Sidebar-Button-Text">{x.name}</p><p className="Sidebar-Button-Close" onClick={() => props.deleteWindow(x.id)}>x</p></div>
+        return <div className="Sidebar-Button" onClick={() => onClick(x.id)}><p className="Sidebar-Button-Text">{x.name}</p><p className="Sidebar-Button-Close" onClick={() => props.deleteWindow(x.id)}>x</p></div>
     })
 
     return <div className="Sidebar">

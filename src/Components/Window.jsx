@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "../CSS/Window.css"
 import Draggable from "@tdaniil/react-draggable";
+import Calculator from "./Calculator";
 
 export default function Window(props) {
     function onStop(e, dragElement) {
@@ -24,9 +25,10 @@ export default function Window(props) {
         <div className="Window-Header">
             <p>{props.name}</p>
             <div className="Window-Header-Buttons">
-                <button className="Window-Header-Buttons-Minimize">-</button>
+                <button className="Window-Header-Buttons-Minimize" onClick={() => props.hideWindow(props.id)}>-</button>
                 <button className="Window-Header-Buttons-Close" onClick={() => props.deleteWindow(props.id)}>X</button>
             </div>
         </div>
+        {props.type === "default" ? <Calculator/> : ""}
     </div></Draggable>
 }

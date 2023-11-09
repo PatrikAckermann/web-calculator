@@ -11,7 +11,7 @@ function App() {
 
     function addWindow(type) {setWindows(x => {
         setId(id => id += 1)
-        return [...x, {id: id, type: type, x: 100, y: 100, layer: 100000000, name: "Calculator " + id}]
+        return [...x, {id: id, type: type, x: 100, y: 100, layer: 100000000, name: "Calculator " + id, hidden: false}]
     })}
     
     function deleteWindow(id) {
@@ -42,11 +42,25 @@ function App() {
         }
     }
 
+    function hideWindow(id) {
+        setWindows(x => x.map(y => {
+            if (y.id === id) {y.hidden = true}
+            return y
+        }))
+    }
+
+    function showWindow(id) {
+        setWindows(x => x.map(y => {
+            if (y.id === id) {y.hidden = false}
+            return y
+        }))
+    }
+
     console.log("APP RELOAD", windows)
 
     return <div className="App">
-        <Sidebar windows={windows} setWindows={setWindows} addWindow={addWindow} deleteWindow={deleteWindow} moveToTop={moveToTop}/>
-        <WindowArea windows={windows} setWindows={setWindows} deleteWindow={deleteWindow} moveToTop={moveToTop}/>
+        <Sidebar windows={windows} setWindows={setWindows} addWindow={addWindow} deleteWindow={deleteWindow} moveToTop={moveToTop} showWindow={showWindow}/>
+        <WindowArea windows={windows} setWindows={setWindows} deleteWindow={deleteWindow} moveToTop={moveToTop} hideWindow={hideWindow}/>
     </div>
 }
 
