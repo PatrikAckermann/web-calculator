@@ -9,6 +9,8 @@
     width: 100%;
     background-color: #555555;
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .Calculator-Display-Top {
@@ -16,6 +18,12 @@
     width: 100%;
     background-color: #777777;
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Calculator-Display-Text {
+    margin: auto 10px;
 }
 
 .Calculator-Buttons {
@@ -24,18 +32,16 @@
     justify-items: center;
     height: calc(100% - 80px);
     width: 100%;
-    
+    user-select: none;
 }
 
 .CalcButton {
     text-align: center;
-    width: auto;
-    height: auto;
-    aspect-ratio: 1;
-    border-radius: 100%;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    border-radius: 20px;
     background-color: #555555;
     margin: 10px;
-    max-width: calc(100% - 10px);
 }
 
 .CalcButton > p {
